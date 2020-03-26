@@ -25,7 +25,10 @@ export default {
    */
   css: [
     // プロジェクト内の SCSS ファイル
-    '@/assets/css/main.scss'
+    {
+      src: "@/assets/css/main.scss",
+      lang: "scss"
+    }
   ],
   /*
    ** Plugins to load before mounting the App
@@ -41,7 +44,14 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
+    "@nuxtjs/style-resources",
   ],
+  styleResources: {
+    // 指定したSCSSファイルをvueファイル内のstyleタグの中で有効とする
+    scss: [
+      '@/assets/css/foundation/_variables.scss',
+    ]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

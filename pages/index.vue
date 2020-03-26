@@ -1,27 +1,22 @@
-<template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxtjs-practice
-      </h1>
-      <h2 class="subtitle">
-        My super Nuxt.js project!
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
+<template lang="pug">
+  .container
+    div
+      Logo
+      h1.title
+        |倉庫
+      h2.subtitle
+        |My super Nuxt.js project!
+      .links
+        a.button--green(
+          href="https://nuxtjs.org/"
+          target="_blank"
+          )
+          |Documentation
+        a.button--grey(
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+          )
+          |GitHub
 </template>
 
 <script>
@@ -34,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -50,7 +45,7 @@ export default {
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
+  color: $color-key;
   letter-spacing: 1px;
 }
 

@@ -1,10 +1,9 @@
-<template>
-  <div>
-    <nuxt />
-  </div>
+<template lang="pug">
+  div
+    nuxt
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -27,15 +26,15 @@ html {
 .button--green {
   display: inline-block;
   border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+  border: 1px solid $color-link;
+  color: $color-link;
   text-decoration: none;
   padding: 10px 30px;
 }
 
 .button--green:hover {
   color: #fff;
-  background-color: #3b8070;
+  background-color: $color-link;
 }
 
 .button--grey {
