@@ -26,6 +26,10 @@ export default {
   css: [
     // プロジェクト内の SCSS ファイル
     {
+      src: 'bulma/bulma.sass',
+      lang: 'sass'
+    },
+    {
       src: "@/assets/css/main.scss",
       lang: "scss"
     }
