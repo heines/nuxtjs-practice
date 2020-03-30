@@ -1,22 +1,23 @@
 <template lang="pug">
   .container
-    div
-      Logo
+    div.container-wrap
       h1.title
-        |倉庫
+        |storage
       h2.subtitle
-        |My super Nuxt.js project!
-      .links
-        a.button--green(
-          href="https://nuxtjs.org/"
-          target="_blank"
-          )
-          |Documentation
-        a.button--grey(
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          )
-          |GitHub
+        |テキストの掃き溜め
+      ul.columns.is-multiline
+        li.column.is-one-quarter
+          a(
+            href="https://nuxtjs.org/"
+            target="_blank"
+            )
+            |Documentation
+        li.column.is-one-quarter
+          a(
+            href="https://github.com/nuxt/nuxt.js"
+            target="_blank"
+            )
+            |GitHub
 </template>
 
 <script>
@@ -37,6 +38,9 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  &-wrap {
+    width: 80%;
+  }
 }
 
 .title {
