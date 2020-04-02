@@ -17,7 +17,7 @@ export default {
   },
   data () {
     return {
-      title: 'テストサイト'
+      title: 'about'
     }
   },
   head () {
@@ -25,7 +25,7 @@ export default {
       title: this.title,
       meta: [
         // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
-        { hid: 'description', name: 'description', content: 'My custom description' }
+        { hid: 'description', name: 'description', content: 'このサイトについて' }
       ]
     }
   }
