@@ -23,6 +23,11 @@ $ npm run generate
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
+## 導入手順
+### 環境変数（.envファイル）
+- 本環境ではdotenvを使用して環境変数を管理します。
+- `.env.sample`ファイルをコピーし、`.env`ファイルを各自作成してください。
+
 ## Target
 - Nuxt SSR実行環境作成
 - 手順書作成（md or wiki）

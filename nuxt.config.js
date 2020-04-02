@@ -1,5 +1,19 @@
+require('dotenv').config();
+
 export default {
   mode: "universal",
+  buildModules: [
+    "@nuxtjs/dotenv"
+  ],
+  /*
+   ** Environments
+   */
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  router: {
+    base: process.env.SUBDIR
+  },
   /*
    ** Headers of the page
    */
@@ -49,6 +63,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     "@nuxtjs/axios",
     "@nuxtjs/style-resources",
+    "@nuxtjs/dotenv",
   ],
   styleResources: {
     // 指定したSCSSファイルをvueファイル内のstyleタグの中で有効とする
