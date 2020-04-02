@@ -10,9 +10,6 @@
 
 <script>
 export default {
-  components: {
-    Logo,
-  },
   data () {
     return {
       title: 'about'
