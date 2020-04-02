@@ -27,6 +27,20 @@ export default {
   components: {
     Logo,
   },
+  data () {
+    return {
+      title: 'テストサイト'
+    }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
+        { hid: 'description', name: 'description', content: 'My custom description' }
+      ]
+    }
+  }
 }
 </script>
 
