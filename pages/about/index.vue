@@ -2,25 +2,10 @@
   .container
     div.container-wrap
       h1.title
-        |storage
-      h2.subtitle
-        |テキストの掃き溜め
+        |about
       nuxt-link(
-        to="/about"
-        ) about
-      ul.columns.is-multiline
-        li.column.is-one-quarter
-          a(
-            href="https://nuxtjs.org/"
-            target="_blank"
-            )
-            |Documentation
-        li.column.is-one-quarter
-          a(
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            )
-            |GitHub
+        to="/"
+        ) Home
 </template>
 
 <script>
