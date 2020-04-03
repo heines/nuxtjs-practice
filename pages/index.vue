@@ -8,26 +8,31 @@
       nuxt-link(
         to="/about"
         ) about
-      ul.columns.is-multiline
-        li.column.is-one-quarter
-          a(
-            href="https://nuxtjs.org/"
-            target="_blank"
-            )
-            |Documentation
-        li.column.is-one-quarter
-          a(
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            )
-            |GitHub
+      div {{ post }}
+      template(
+        v-if="posts.length"
+        )
+        ul.columns.is-multiline(
+          v-for="(post, i) in posts"
+          :key="i"
+          )
+          li.column.is-one-quarter
+            a(
+              href="https://nuxtjs.org/"
+              target="_blank"
+              )
+              |{{ post.fields.title }}
+            div {{post}}
 </template>
 
 <script>
+import client from '~/plugins/contentful';
+
 export default {
   data () {
     return {
-      title: 'テストサイト'
+      title: 'テストサイト',
+      post: '',
     }
   },
   head () {
@@ -38,6 +43,16 @@ export default {
         { hid: 'description', name: 'description', content: 'My custom description' }
       ]
     }
+  },
+  async asyncData({ env }) {
+    let posts = []
+    await client.getEntries({
+      content_type: 'post',
+    }).then(res => {
+      posts = res.items
+    })
+    .catch(console.error)
+    return { posts }
   }
 }
 </script>
