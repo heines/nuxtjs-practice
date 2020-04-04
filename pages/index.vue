@@ -17,12 +17,11 @@
           :key="i"
           )
           li.column.is-one-quarter
-            a(
-              href="https://nuxtjs.org/"
-              target="_blank"
+            nuxt-link(
+              :to="{ name: 'text-url', params: {url: post.fields.url} }"
               )
-              |{{ post.fields.title }}
-            div {{post}}
+              h3 {{ post.fields.title }}
+              h4 {{ post.sys.createdAt }}
 </template>
 
 <script>
