@@ -17,13 +17,23 @@ export default {
   },
   head () {
     return {
-      title: 'title',
+      title: this.posts[0].fields.title,
       meta: [
         // `hid` は一意の識別子として使用されます。 `vmid` は動作しないので使わないでください。
-        { hid: 'description', name: 'description', content: 'コンテンツ' }
+        { hid: 'description', name: 'description', content: this.posts[0].fields.description }
       ]
     }
   },
+  async asyncData({ env }) {
+    let posts = []
+    await client.getEntries({
+      content_type: 'post',
+    }).then(res => {
+      posts = res.items
+    })
+    .catch(console.error)
+    return { posts }
+  }
 }
 </script>
 
