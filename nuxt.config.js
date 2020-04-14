@@ -1,7 +1,21 @@
 require('dotenv').config();
+const client = require('./plugins/contentful').default;
 
 export default {
   mode: "universal",
+  /*
+   ** Generate
+   */
+  generate: {
+    routes() {
+      return client.getEntries({
+        content_type: 'post',
+      })
+      .then(posts => {
+        return [...posts.items.map(post => `/text/${post.fields.url}`)]
+      })
+    }
+  },
   /*
    ** Environments
    */
