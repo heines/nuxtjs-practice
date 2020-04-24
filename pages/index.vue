@@ -1,27 +1,27 @@
 <template lang="pug">
   .container
-    div.container-wrap
+    .container-wrap
+      .bookmark
+        .bookmark-wrap
+          template(
+            v-if="posts.length"
+            )
+            ul(
+              v-for="(post, i) in posts"
+              :key="i"
+              )
+              li
+                nuxt-link(
+                  :to="{ name: 'text-url', params: {url: post.fields.url} }"
+                  )
+                  h4 {{ $dateFns.format(post.sys.createdAt, 'yyyy. MMM. d') }}
+                  h3 {{ post.fields.title }}
       h1.title
         |storage
-      h2.subtitle
-        |テキストの掃き溜め
-      nuxt-link(
-        to="/about"
-        ) about
-      div {{ post }}
-      template(
-        v-if="posts.length"
-        )
-        ul.columns.is-multiline(
-          v-for="(post, i) in posts"
-          :key="i"
-          )
-          li.column.is-one-quarter
-            nuxt-link(
-              :to="{ name: 'text-url', params: {url: post.fields.url} }"
-              )
-              h3 {{ post.fields.title }}
-              h4 {{ post.sys.createdAt }}
+      .band
+        nuxt-link(
+          to="/about"
+          ) about
 </template>
 
 <script>
@@ -65,8 +65,50 @@ export default {
   align-items: center;
   text-align: center;
   &-wrap {
-    width: 80%;
+    position: relative;
+    width: 90%;
+    background: #f0f8ff;
   }
+}
+
+.bookmark {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 200px;
+  height: 200px;
+  background-image: url('~assets/image/bookmark.jpg');
+  background-size: cover;
+  overflow-y: scroll;
+  &-wrap {
+    position: relative;
+    padding: 1em;
+    color: #fff;
+    text-align: left;
+    ul {
+      padding: 0;
+    }
+    h3, h4 {
+      color: #fff;
+    }
+    h3 {
+      font-weight: bold;
+    }
+    h4 {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.band {
+  position: relative;
+  bottom: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+  height: 150px;
+  background: #fffaf0;
 }
 
 .title {
@@ -77,14 +119,8 @@ export default {
   font-size: 100px;
   color: $color-key;
   letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+  text-align: left;
+  margin: 0 0 0 10px;
 }
 
 .links {

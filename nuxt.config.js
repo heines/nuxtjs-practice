@@ -73,7 +73,8 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "@nuxtjs/date-fns",
   ],
   /*
    ** Nuxt.js modules
