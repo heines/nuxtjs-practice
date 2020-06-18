@@ -1,5 +1,6 @@
 <template lang="pug">
   .container
+    Menu
     .container-wrap
       .bookmark
         .bookmark-wrap
@@ -26,6 +27,7 @@
 
 <script>
 import client from '~/plugins/contentful';
+import Menu from '@/components/Menu';
 
 export default {
   data () {
@@ -52,16 +54,17 @@ export default {
     })
     .catch(console.error)
     return { posts }
+  },
+  components: {
+    Menu
   }
 }
 </script>
 
 <style lang="scss">
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   &-wrap {
