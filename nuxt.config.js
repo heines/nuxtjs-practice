@@ -89,6 +89,11 @@ export default {
     // 指定したSCSSファイルをvueファイル内のstyleタグの中で有効とする
     scss: [
       '@/assets/css/foundation/_variables.scss',
+      '@/assets/css/foundation/_functions.scss',
+      '@/assets/css/foundation/_global.scss',
+      '@/assets/css/foundation/_keyframes.scss',
+      '@/assets/css/foundation/_mixin-utils.scss',
+      '@/assets/css/foundation/_variables-easings.scss',
     ]
   },
   /*
